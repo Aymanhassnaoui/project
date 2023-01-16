@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello CommandeController!
+{% endblock %}
+
+{% block body %}
+	<section class="about-banner relative">
+		<div class="overlay overlay-bg"></div>
+		<div class="container">
+			<div class="row d-flex align-items-center justify-content-center">
+				<div class="about-content col-lg-12">
+					<h1 class="text-white">
+						UTILISATEUR
+					</h1>
+					<p class="text-white link-nav">
+						<a>ACCUEIL
+						</a>
+						<span class="lnr lnr-arrow-right"></span>
+						<a>
+							UTILISATEUR</a>
+					</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<h2>
+		je  passe ma commande
+	</h2>
+
+	<div class="contact">
+		{{form(form)}}
+		</div>
+		{% for produit in cart %}
+
+			<tr text-align: "center">
+				<td width="120px"><img width="120px" src={{ produit.produit.photo }} alt=""></td>
+
+			</tr>
+		{% endfor %}
+		<br>
+		<a href='/stripe/{reference}'>
+			payer mes reservation
+		</a>
+	{% endblock %}
